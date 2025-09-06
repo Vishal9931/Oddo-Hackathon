@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="UserDashbord.css">
+</head>
+<body>
+
+  
+   <nav class="navbar">
+    <div class="logo">
+        <img src="./logoo.png" alt="BudgetMart" height="80px">
+    </div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="sell.html" class="btn-sell">Sell</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="btn-login">Login/SignUp</a></li>
+        
+    </ul>
+  </nav>
+
+  
+  <div class="container">
+    
+    
+    <aside class="sidebar">
+      <h3>MY ORDERS</h3>
+      <ul>
+        <li><a href="#">My Orders</a></li>
+		<li><a href="#">My Cart</a></li>
+      </ul>
+
+    
+
+      <div class="logout">Logout</div>
+    </aside>
+
+   
+    <section class="main-content">
+      <h2>Personal Information <a href="edit.html">Edit</a></h2>
+      
+        
+      
+      <div class="picture">
+          <img src="john.webp" alt="Profile picture">
+        </div>
+
+ <div class="info-group">
+  
+        <label>Full Name</label>
+        <span>Aditya Kumar Choudhary</span>
+        
+      </div>
+      
+      <div class="info-group">
+        
+        <label style="display: block;">Gender</label>
+        <span>Male</span>
+       
+      </div>
+
+      <div class="info-group">
+        <label>Email Address</label>
+        <span>choudharyadityakumar49@gmail.com</span>
+        
+      </div>
+
+      <div class="info-group">
+        <label>Mobile Number</label>
+        <span>+91 9012141837</span>
+        
+      </div>
+
+      
+      <div class="faq">
+        <h3>FAQs</h3>
+        <p><b>What happens when I update my email address?</b><br>
+          Your login ID changes, and you’ll receive all account communication on the new email.</p>
+        
+        <p><b>When will my account be updated with the new email address?</b><br>
+          As soon as you confirm the verification code sent to your email.</p>
+        
+        <p><b>What happens to my existing account when I update?</b><br>
+          Your account remains fully functional with the updated details.</p>
+        
+        <p><b>Does my Seller account get affected when I update my email?</b><br>
+          No, your Seller account stays linked with your updated ID.</p>
+
+      
+      </div>
+    </section>
+  </div>
+ <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
