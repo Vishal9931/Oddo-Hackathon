@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #1d3557;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header h1 {
+    flex: 1;
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .back-btn i {
+    margin-right: 5px;
+  }
+  
+  /* Form */
+  .form-container {
+    background: white;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* Buttons */
+  .image-btn {
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .image-btn:hover {
+    background-color: #29548f;
+  }
+  
+  .submit-btn {
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .submit-btn:hover {
+    background-color: #29548f;
+  }

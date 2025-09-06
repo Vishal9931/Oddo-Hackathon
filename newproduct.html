@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Product - BudgetMart</title>
+  <link rel="stylesheet" href="newproduct.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <button class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+    <h1>Add New Product</h1>
+  </header>
+
+  <!-- Form -->
+  <section class="form-container">
+    <form action="submit-product" method="post">
+      
+      <label for="title">Product Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter product title" required>
+
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select Category --</option>
+        <option value="electronics">Electronics</option>
+        <option value="furniture">Furniture</option>
+        <option value="fashion">Fashion</option>
+        <option value="books">Books</option>
+        <option value="others">Others</option>
+      </select>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" placeholder="Write about your product..." required></textarea>
+
+      <label for="price">Price (₹)</label>
+      <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+      <button type="button" class="image-btn">
+        <i class="fa-solid fa-image"></i> + Add Image
+      </button>
+
+      <button type="submit" class="submit-btn">Submit Listing</button>
+    </form>
+  </section>
+
+</body>
+</html>
