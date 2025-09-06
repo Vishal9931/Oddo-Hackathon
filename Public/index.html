@@ -1,11 +1,28 @@
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>EcoFinds Test</title></head>
+<head><title>Feed</title></head>
 <body>
-  <h1>EcoFinds test page</h1>
-  <p>Server & static files are working.</p>
+  <h1>Products</h1>
+  <div id="products"></div>
+
   <script>
-    fetch('/api/hello').then(r=>r.json()).then(j=>console.log(j));
+    async function loadProducts() {
+      const res = await fetch('/api/products');
+      const products = await res.json();
+
+      const div = document.getElementById('products');
+      div.innerHTML = '';
+      products.forEach(p => {
+        div.innerHTML += `<div>
+          <h3>${p.title}</h3>
+          <p>${p.description || ''}</p>
+          <p>Price: $${p.price}</p>
+          ${p.image ? `<img src="${p.image}" width="100">` : ''}
+        </div>`;
+      });
+    }
+
+    loadProducts();
   </script>
 </body>
 </html>
