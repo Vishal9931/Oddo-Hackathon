@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1d3557;
+      padding: 15px 20px;
+      color: #fff;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .header img {
+      height: 40px;
+    }
+
+    /* Main Layout */
+    .cart-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start; 
+
+  /* ensures alignment from the top */
+}
+
+    .cart-items-section {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .cart-title {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #1d3557;
+    }
+
+    /* Product Cards */
+    .cart-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .cart-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .cart-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .cart-card img {
+      width: 100%;
+      max-width: 150px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      height: auto;
+    }
+
+    .cart-card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #1d3557;
+    }
+
+    .price {
+      color: black;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .quantity {
+      margin: 8px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .remove-btn {
+      margin-top: 10px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #1d3557;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+
+    /* Cart Summary */
+    .cart-summary {
+  flex: 1;
+  min-width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  height: 290px;
+  margin-top: 70px; /* pushes it down to match first card level */
+}
+
+    .cart-summary h2 {
+      margin: 0;
+      color: #1d3557;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .checkout-btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #457b9d;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .checkout-btn:hover {
+      background: #1d3557;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 900px) {
+      .cart-container {
+        flex-direction: column;
+      }
+
+      .cart-summary {
+        order: 2; /* Place summary below items */
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 18px;
+      }
+      .cart-title {
+        font-size: 22px;
+      }
+    }
+
+    .link {
+       height: 30px;
+      font-size: 40px;
+      margin-left: 120px;
+   
+      
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>🛍️ BudgetMart</h1>
+    <img src="market-removebg-preview.png" alt="Logo">
+  </div>
+
+  <!-- Cart Container -->
+  <div class="cart-container">
+    <!-- Left Side: Cart Items -->
+    <div class="cart-items-section">
+      <h2 class="cart-title">My Cart</h2>
+      <div class="cart-items">
+        <!-- Product 1 -->
+        <div class="cart-card">
+          <img src="https://media.istockphoto.com/id/1199687514/photo/blue-modern-wireless-earphones-on-white-background.jpg?s=612x612&w=0&k=20&c=am3cqsLCxam__kdEbUV-kafsL1Gd3i99CPb-Ok6Q8-o=" alt="Product 1">
+          <h3>Wireless Headphones</h3>
+          <p class="price">₹499</p>
+          <p class="quantity">Quantity: 1</p>
+
+          <button class="remove-btn">Remove</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="cart-card">
+          <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/refurb-45-cell-alum-starlight-sport-band-starlight-s9?wid=1144&hei=1144&fmt=jpeg&qlt=90" alt="Product 2">
+          <h3>Smart Watch</h3>
+          <p class="price">₹399</p>
+          <p class="quantity">Quantity: 2</p>
+          <button class="remove-btn">Remove</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="cart-card">
+          <img src="https://smartkoshk.com/cdn/shop/files/Galaxy_S24_FE_Gray_Egypt.png?v=1734850648&width=1946" alt="Product 3">
+          <h3>Mobile</h3>
+          <p class="price">₹2,999</p>
+          <p class="quantity">Quantity: 1</p>
+          <button class="remove-btn">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Cart Summary -->
+    <div class="cart-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>₹3,897</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span>₹99</span>
+      </div>
+      <hr>
+      <div class="summary-row" style="font-weight:bold;">
+        <span>Total</span>
+        <span>₹3,996</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+
+  </div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Previous Purchases</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#1d3557;
+      --maxw:1100px;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .logo{
+      height:52px;
+      width:52px;
+      background:linear-gradient(135deg,#06b6d4,#1d3557);
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:18px;
+      box-shadow:0 6px 18px rgba(12,17,29,0.06);
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+
+    /* Search / filters */
+    .controls{
+      display:flex;
+      gap:12px;
+      margin:18px 0 22px 0;
+      flex-wrap:wrap;
+    }
+    .search{
+      flex:1 1 220px;
+      display:flex;
+      background:var(--card);
+      border-radius:10px;
+      padding:8px 12px;
+      align-items:center;
+      gap:8px;
+      box-shadow:0 4px 14px rgba(2,6,23,0.06);
+    }
+    .search input{border:0;outline:0;font-size:14px;background:transparent;width:100%}
+    .btn{
+      background:var(--accent);
+      color:white;padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer;
+    }
+    .small-btn{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:8px 10px;border-radius:8px}
+
+    /* List */
+    .purchases{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .purchase-item{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:12px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      box-shadow:0 6px 18px rgba(12,17,29,0.04);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .purchase-item:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(12,17,29,0.06)}
+
+    .product-thumb{
+      flex:0 0 84px;
+      height:84px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#eaeef7;
+      display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--muted)
+    }
+    .product-info{
+      flex:1 1 auto;display:flex;flex-direction:column;gap:4px;
+    }
+    .row{display:flex;align-items:center;gap:8px}
+    .title{font-weight:700; color: #1d3557;}
+    .meta{color:var(--muted);font-size:13px}
+    .price{font-weight:700}
+    .right{
+      display:flex;flex-direction:column;gap:8px;align-items:flex-end;flex:0 0 140px
+    }
+    .tag{background:#eef2ff;padding:6px 8px;border-radius:999px;font-size:12px;color:#3730a3}
+
+    /* Empty state */
+    .empty{
+      text-align:center;padding:28px;border-radius:12px;background:linear-gradient(180deg,#ffffff, #fbfdff);box-shadow:0 6px 18px rgba(12,17,29,0.04)
+    }
+
+    /* Responsive behavior */
+    @media (min-width:768px){
+      .purchase-item{align-items:center}
+      .product-thumb{flex:0 0 96px;height:96px}
+      .right{flex:0 0 200px;align-items:flex-end}
+    }
+
+    /* Accessibility tweaks */
+    button:focus, input:focus{outline:3px solid rgba(14,165,164,0.12);outline-offset:2px}
+
+    .product-thumb{
+        background-image: url("headphone.jpg");
+        background-size: cover;
+    }
+
+    
+    .product-thumb2{
+      height: 110px;
+      width: 100px;
+        background-image: url("coffee.jpg");
+        background-size: cover;
+        border-radius: 4px;
+        
+    }
+  
+    
+    
+    .product-thumb3{
+      height: 110px;
+      width: 100px;
+        background-image: url("shirt.jpg");
+        background-size: cover;
+        border-radius: 4px;
+        
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">QM</div>
+      <div>
+        <h1>Previous Purchases</h1>
+      
+      </div>
+    </header>
+
+    <section class="controls">
+      <div class="search" aria-label="Search previous purchases">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M21 21l-4.35-4.35" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="6" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle></svg>
+        <input type="search" placeholder="Search product name, category or date..." />
+      </div>
+      <button class="small-btn">Filter</button>
+      <button class="btn">Export</button>
+    </section>
+
+    <main>
+      <ul class="purchases" role="list">
+
+        <!-- Example purchase item 1 -->
+        <li class="purchase-item" role="listitem">
+          <div class="product-thumb"></div>
+          <div class="product-info">
+            <div class="row">
+              <div style="flex:1">
+                <div class="title">Wireless Headphones X200</div>
+                <div class="meta">Category: Electronics • Purchased on: Aug 14, 2025 </div>
+                <i class="fa-solid fa-star"></i>
+                 <i class="fa-solid fa-star"></i>
+                 <i class="fa-solid fa-star-half-stroke"></i>
+                 <i class="fa-regular fa-star"></i>
+                 <i class="fa-regular fa-star"></i>
+                 
+              </div>
+              <div class="right">
+                <div class="price">₹499</div>
+                <div class="tag">Qty: 1</div>
+              </div>
+            </div>
+            <div class="meta">Order ID: ORD-20250814-1422 — Color: Black</div>
+          </div>
+        </li>
+
+        <!-- Example purchase item 2 -->
+        <li class="purchase-item">
+          <div class="product-thumb2"></div>
+          <div class="product-info">
+            <div class="row">
+              <div style="flex:1">
+                <div class="title">Organic Coffee Beans</div>
+                <div class="meta">Category: Grocery • Purchased on: Jul 3, 2025</div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                 <i class="fa-solid fa-star"></i>
+                   <i class="fa-regular fa-star"></i>
+                     <i class="fa-regular fa-star"></i>
+
+                
+              </div>
+              <div class="right">
+                <div class="price">₹399</div>
+                <div class="tag">Qty: 2</div>
+              </div>
+            </div>
+            <div class="meta">Order ID: ORD-20250703-7719 — Roast: Medium</div>
+          </div>
+        </li>
+
+        <!-- Example purchase item 3 -->
+        <li class="purchase-item">
+          <div class="product-thumb3"></div>
+          <div class="product-info">
+            <div class="row">
+              <div style="flex:1">
+                <div class="title">Classic Cotton Shirt</div>
+                <div class="meta">Category: Apparel • Purchased on: Apr 21, 2025</div>
+                   <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                       <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                         <i class="fa-regular fa-star"></i>
+              </div>
+              <div class="right">
+                <div class="price">₹299</div>
+                <div class="tag">Qty: 1</div>
+              </div>
+            </div>
+            <div class="meta">Order ID: ORD-20250421-3321 — Size: L, Color: Black</div>
+          </div>
+        </li>
+
+        <!-- If user has no purchases, show empty state (uncomment to test) -->
+        <!--
+        <li class="empty">
+          <h3>No previous purchases found</h3>
+          <p class="meta">Looks like you haven't bought anything yet. Once you do, your past purchases will appear here.</p>
+        </li>
+        -->
+
+      </ul>
+    </main>
+
+  </div>
+</body>
+</html>
