@@ -1,0 +1,77 @@
+body {
+    background-color: #1d3551;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Transparent signup box */
+  .signup-box {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 25px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    border-radius: 8px;
+    
+  }
+  
+  h2 {
+    color: #111827;
+    margin-bottom: 15px;   /* Reduced heading gap */
+  }
+  
+  form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  label {
+    color: #333333;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin: 8px 0 3px;     /* Small gap above, very small below */
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;   /* Reduced space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #1d3551;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;      /* Small gap above button */
+  }
+  
+  button:hover {
+    background-color: #214875;
+  }
+  
+  p {
+    font-size: 14px;
+    margin-top: 12px;      /* Smaller space under button */
+  }
+  
+  a {
+    color: #1d3551;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

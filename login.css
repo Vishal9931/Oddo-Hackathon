@@ -1,0 +1,73 @@
+
+body{
+    background-color: #1d3551; /* Light gray background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-image: url("./logoo.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; */
+  }
+  
+  .login-box {
+    background-color: rgba(255, 255, 255, 0.4); /* White box */
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    height: auto;
+    width: auto;
+  }
+  
+  h2 {
+    color: #111827;             /* Dark text */
+  }
+  
+  label {
+    color: #333333;
+    font-size: 14px;
+  }
+  
+  input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /* border: 1px solid #ccc; */
+    background-color: #eeeff5;
+    border: none;
+    color: #000;
+  }
+  
+  button {
+    background-color: #1d3551;   /* Blue button */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #244871;   /* Darker blue */
+  }
+  
+  p {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  
+  a {
+    color: #0e4d90;              /* Orange link */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
