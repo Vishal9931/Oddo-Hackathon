@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>EcoFinds Test</title></head>
+<body>
+  <h1>EcoFinds test page</h1>
+  <p>Server & static files are working.</p>
+  <script>
+    fetch('/api/hello').then(r=>r.json()).then(j=>console.log(j));
+  </script>
+</body>
+</html>
